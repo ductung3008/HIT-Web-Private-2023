@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'VNMSans';
+    src: url(./VNM-Sans-Display-Regular.otf);
+}
+
+body {
+    font-family: 'VNMSans';
+    color: #ffffff;
+    background-color: #0313b0;
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.logo {
+    font-size: 40px;
+}
+
+.name {
+    font-size: 200px;
+}
+
+.detail {
+    font-size: 68px;
+    margin-top: -24px;
+}
+
+.detail span {
+    margin: 0 212px;
+}
+
+.social-media i {
+    font-size: 44px;
+    margin: 50px 25px;
+}

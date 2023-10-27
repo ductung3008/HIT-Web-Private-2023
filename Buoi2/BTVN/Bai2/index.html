@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="form sign-in-form form--open">
+        <div class="header">Login From UI</div>
+        <div class="to-do">Please enter your user information.</div>
+        <form action="">
+            <label for="si-mail">
+                Email
+                <input type="email" name="si-mail" id="si-mail" placeholder="Enter email here" required>
+            </label>
+            <label for="si-password">
+                Password
+                <input type="password" name="si-password" id="si-password" placeholder="***************" required>
+            </label>
+            <label for="si-remember">
+                <input type="checkbox" name="si-remember" id="si-remember">
+                Remember me
+            </label>
+            <button type="submit" class="submit-btn">Sign In</button>
+        </form>
+        <div class="switch">
+            <span class="switch-btn switch-btn--left register-switch-btn">Create An Account</span>
+            <span class="switch-btn switch-btn--right fyp-switch-btn">Forgot your password?</span>
+        </div>
+    </div>
+    <div class="form sign-up-form">
+        <div class="header">Register Form UI</div>
+        <div class="to-do">Please enter your user information.</div>
+        <form action="">
+            <label for="su-mail">
+                Email
+                <input type="email" name="su-mail" id="su-mail" placeholder="Enter email here" required>
+            </label>
+            <label for="su-password">
+                Password
+                <input type="password" name="su-password" id="su-password" placeholder="***************" required>
+            </label>
+            <label for="su-password2">
+                Re-type your password
+                <input type="password2" name="su-password2" id="su-password2" placeholder="***************" required>
+            </label>
+            <label for="tos">
+                <input type="checkbox" name="tos" id="tos">
+                Agree to <a href="#">Terms and Conditions</a>
+            </label>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <div class="switch">
+            <span>Already have an account?</span>
+            <span style="color: #624bff" class="switch-btn login-switch-btn">Login</span>
+        </div>
+    </div>
+    <div class="form fyp-form">
+        <div class="header">Reset your password</div>
+        <div class="to-do">Please enter your email to continue.</div>
+        <form action="">
+            <label for="fyp-mail">
+                Email
+                <input type="email" name="fyp-mail" id="fyp-mail" placeholder="Enter email here" required>
+            </label>
+            <button type="submit" class="submit-btn">Continue</button>
+        </form>
+        <div class="switch">
+            <span class="switch-btn login-switch-btn"><i class="fa-solid fa-caret-left"></i> Go back to Login page</span>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const switchBtnLogin = document.querySelectorAll('.login-switch-btn');
+    const switchBtnRegister = document.querySelector('.register-switch-btn');
+    const switchBtnFYP = document.querySelector('.fyp-switch-btn');
+    const loginForm = document.querySelector('.sign-in-form');
+    const registerForm = document.querySelector('.sign-up-form');
+    const fypForm = document.querySelector('.fyp-form');
+
+    function closeForm() {
+        const opened = document.querySelector('.form--open');
+        opened.classList.remove('form--open');
+    }
+
+    switchBtnRegister.addEventListener('click', () => {
+        closeForm();
+        registerForm.classList.add('form--open');
+    });
+
+    switchBtnFYP.addEventListener('click', () => {
+        closeForm();
+        fypForm.classList.add('form--open');
+    });
+    
+    for (const btn of switchBtnLogin) {
+        btn.addEventListener('click', () => {
+            closeForm();
+            loginForm.classList.add('form--open');
+        })
+    }
+</script>
