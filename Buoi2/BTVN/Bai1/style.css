@@ -9,6 +9,12 @@
     src: url(./VNM-Sans-Display-Regular.otf);
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+}
+
 body {
     font-family: 'VNMSans';
     color: #ffffff;
@@ -35,7 +41,7 @@ body {
     margin: 0 212px;
 }
 
-.social-media i {
+.social-media a {
     font-size: 44px;
     margin: 50px 25px;
 }
