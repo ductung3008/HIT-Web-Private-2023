@@ -60,6 +60,10 @@ input:not([type="checkbox"]) {
     padding-left: 12px;
 }
 
+.lb-checkbox {
+    display: inline;
+}
+
 .submit-btn {
     width: 100%;
     background-color: var(--primary-color);
