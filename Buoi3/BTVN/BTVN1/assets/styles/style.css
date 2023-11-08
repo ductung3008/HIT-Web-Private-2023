@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 50px;
+}
+
+.letter-h,
+.letter-i,
+.letter-t,
+.letter-4 {
+    display: flex;
+}
+
+.letter-i {
+    flex-direction: column;
+}
+
+.letter-h {
+    align-items: center;
+}
+
+.letter-4 div:nth-child(2) {
+    align-self: center;
+}
