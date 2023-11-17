@@ -544,4 +544,8 @@ footer .social-media a {
 /* Tablet/Mobile Navbar Button */
 .navbar-button {
     display: none;
-  }
+}
+
+.scroll-block {
+    overflow: hidden;
+}

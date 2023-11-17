@@ -69,39 +69,34 @@ window.addEventListener('scroll', () => {
     }
 })
 
-const isMobile = window.matchMedia('(max-width: 990px)').matches;
-// Tablet/Mobile Navbar Button
-if (isMobile) {
-    const navbarButton = document.querySelector('.navbar-button');
-    const navbar = document.getElementById('nav');
-    function closeNavbar() {
-        navbarButton.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-        navbarButton.classList.remove('navbar-button--active');
-        navbar.style.left = '-100%';
-        document.querySelector('html').style.overflow = 'visible';
+/**
+ * Tablet/Mobile Navbar
+ */
+const navbarButton = document.querySelector('.navbar-button');
+const navbar = document.getElementById('nav');
+const navbarButtonIcon = navbarButton.querySelector('i');
+function navbarToggle() {
+    navbar.classList.toggle('navbar--active');
+    navbarButtonIcon.classList.toggle('fa-bars');
+    navbarButtonIcon.classList.toggle('fa-xmark');
+    navbarButton.classList.toggle('navbar-button--active');
+    if (window.matchMedia('(max-width: 990px)').matches) {
+        document.querySelector('html').classList.toggle('scroll-block');
     }
-    function openNavbar() {
-        navbarButton.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-        navbarButton.classList.add('navbar-button--active');
-        navbar.style.left = '20px';
-        document.querySelector('html').style.overflow = 'hidden';
-    }
-    navbarButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (navbarButton.querySelector('i').classList.contains('fa-bars')) {
-            openNavbar();
-        }
-        else {
-            closeNavbar();
-        }
-    });
-    document.addEventListener('click', (e) => {
-        const clicked = e.target;
-        if (!navbar.contains(clicked)) {
-            closeNavbar();
-        }
-    });
-    navItems.forEach(navItem => {
-        navItem.addEventListener('click', closeNavbar);
-    })
 }
+// Toggle Navbar when click navbarButton 
+navbarButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navbarToggle();
+});
+// Close navbar when click outside of navbar
+document.addEventListener('click', (e) => {
+    const clicked = e.target;
+    if (!navbar.contains(clicked) && navbar.classList.contains('navbar--active')) {
+        navbarToggle();
+    }
+});
+// Close navbar when click navbar item
+navItems.forEach(navItem => {
+    navItem.addEventListener('click', navbarToggle);
+})

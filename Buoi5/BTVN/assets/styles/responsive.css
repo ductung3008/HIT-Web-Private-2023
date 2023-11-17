@@ -67,6 +67,10 @@
     color: #fff;
   }
 
+  .navbar--active {
+    left: 20px !important;
+  }
+
   .content {
     padding: 0 50px;
   }
