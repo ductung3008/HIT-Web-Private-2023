@@ -1,0 +1,74 @@
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    #home {
+        margin-top: 48px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        width: 100%;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    header .nav li:first-child {
+        height: 48px;
+    }
+
+    header .nav li:not(:first-child),
+    header .search {
+        display: none;
+    }
+
+    header .mb-bars {
+        display: flex;
+    }
+
+    header .mb-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+    }
+
+    #band .users,
+    #tour .card-wrap,
+    #contact div {
+        flex-direction: column;
+    }
+
+    #band .users > div,
+    #tour .card-wrap .card,
+    #contact form input {
+        width: 100%;
+    }
+
+    #contact form > div {
+        justify-content: flex-start;
+        margin-top: 12px;
+    }
+
+    #contact form input {
+        margin: 0;
+    }
+
+    #contact form input:nth-child(2) {
+        margin: 0 0 8px 0;
+    }
+}
