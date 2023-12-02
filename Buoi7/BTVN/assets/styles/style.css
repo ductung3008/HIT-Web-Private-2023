@@ -149,6 +149,7 @@ header {
 #home {
     position: relative;
     overflow: hidden;
+    margin-top: 48px;
 }
 
 #home .banner {
@@ -163,7 +164,7 @@ header {
 
 #home > div > div:nth-child(2) {
     position: absolute;
-    bottom: 40px;
+    bottom: 88px;
     right: 50%;
     transform: translateX(50%);
     color: white;
