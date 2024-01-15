@@ -1,4 +1,4 @@
-const birthday = new Date('Aug 18, 2024 00:00:00').getTime();
+let birthday = new Date('Aug 18, 2024 00:00:00').getTime();
 const app = document.querySelector('#app div');
 const SEC = 1000, MIN = SEC * 60, HOUR = MIN * 60, DAY = HOUR * 24;
 setInterval(() => {
@@ -10,7 +10,6 @@ setInterval(() => {
     const second = Math.floor(time % MIN / SEC).toString().padStart(2, '0');
     app.innerHTML = `${day}d : ${hour}h : ${minute}m : ${second}s`
     if (time < 0) {
-        app.innerHTML = 'Happy Birthday HIT - 14 years';
-        clearInterval();
+        birthday = new Date(`Aug 18, ${new Date().getFullYear() + 1} 00:00:00`).getTime();
     }
 }, 1000);
