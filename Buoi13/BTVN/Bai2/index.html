@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather App</title>
+        <link rel="icon" type="image/x-icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7911203/weather-icon-md.png">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
+        <link rel="stylesheet" href="./assets/styles/main.css" />
+    </head>
+    <body class="font-sans">
+        <div class="flex h-dvh">
+            <div class="w-2/5 text-center">
+                <h1
+                    class="mt-5 bg-gradient-to-r from-red-500 via-violet-500 to-blue-500 bg-clip-text text-center text-6xl font-bold text-transparent">
+                    Weather App
+                </h1>
+                <div class="relative p-10">
+                    <input
+                        type="text"
+                        name="countryName"
+                        id="countryName"
+                        placeholder="Enter a city name"
+                        class="w-full rounded-full bg-[#efefef] px-5 py-2 outline-none" />
+                    <button
+                        type="submit"
+                        class="js-weather-btn absolute right-[40px] top-1/2 flex size-10 -translate-y-1/2 justify-center rounded-full bg-gradient-to-r from-red-500 via-violet-500 to-blue-500 p-3 px-10">
+                        <i class="fa-solid fa-magnifying-glass text-white"></i>
+                    </button>
+                </div>
+                <div class="js-weather-app"></div>
+            </div>
+            <div class="w-full bg-[#efefef] p-20 pt-24 js-weather-info">
+                
+            </div>
+        </div>
+    </body>
+    <script src="./assets/script/main.js"></script>
+</html>
